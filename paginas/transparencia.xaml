@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sombrero.paginas.transparencia"
+             Title="transparencia">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <!-- Introducción -->
+            <Label Text="Transparencia Gubernamental"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Nuestro compromiso con la transparencia se basa en proporcionar acceso libre y abierto a toda la información relevante sobre la administración pública."
+                   FontSize="18"
+                   Margin="0,10,0,10"/>
+
+            <!-- Informes y Documentos -->
+            <Label Text="Informes y Documentos"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Button Text="Informe Anual 2024"
+                    Clicked="OnInformeAnualClicked"/>
+            <Button Text="Presupuesto 2024"
+                    Clicked="OnPresupuestoClicked"/>
+
+            <!-- Datos Abiertos -->
+            <Label Text="Datos Abiertos"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Label Text="Accede a nuestros conjuntos de datos abiertos para explorar información detallada y realizar tu propia investigación."
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+            <Button Text="Explorar Datos"
+                    Clicked="OnExplorarDatosClicked"/>
+
+            <!-- Resultados de Auditorías -->
+            <Label Text="Resultados de Auditorías"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Button Text="Auditoría 2024"
+                    Clicked="OnAuditoriaClicked"/>
+
+            <!-- Contactar -->
+            <Label Text="Contactar para Más Información"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Label Text="Si tienes preguntas adicionales o necesitas más información, no dudes en contactarnos."
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+            <Button Text="Contactar"
+                    Clicked="OnContactarClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

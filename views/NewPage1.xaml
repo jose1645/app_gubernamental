@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="sombrero.views.NewPage1"
+             Title="Inicio"
+            Shell.FlyoutBehavior="Disabled"
+            Shell.NavBarIsVisible="False"
+     >
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+            <skia:SKLottieView Source="https://lottie.host/2b8041b5-900e-4ae8-b96b-8e0d18983dea/gEdmosAb6j.json"
+                   HeightRequest="250"
+                   RepeatCount="-1">
+
+            </skia:SKLottieView>
+
+            <Label 
+                Text="Bienvenido"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="26"
+                HorizontalOptions="Center" />
+
+            <Label 
+               x:Name="lbluser"
+                Text="LA SOMBRERIZA"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="26"
+                HorizontalOptions="Center" />
+
+       
+
+            <ImageButton Source="google.png"
+                Aspect="AspectFit"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Clicked="OnSignInClicked"
+                >
+                
+                
+            </ImageButton>
+
+
+
+            <ImageButton Source="logout.png"
+                Aspect="AspectFit"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Clicked="logoutBtn_Clicked"
+                >
+
+
+            </ImageButton>
+
+         
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

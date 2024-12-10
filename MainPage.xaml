@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="sombrero.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="30,0"
+            Spacing="25"
+            >
+            <skia:SKLottieView Source="https://lottie.host/2b8041b5-900e-4ae8-b96b-8e0d18983dea/gEdmosAb6j.json"
+                               HeightRequest="250"
+                               RepeatCount="-1">
+                              
+            </skia:SKLottieView>
+
+            <VerticalStackLayout x:Name="pnlMobileInfo">
+
+                <Label
+                Text="Hola!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Bienvenido a la sombreriza "
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Label Text="Enter Your Phone Number" FontSize="28" />
+            <Entry x:Name="txtMobileNo"  />
+
+                <Button
+                
+                x:Name="btnSubmit"
+                Text="Submit"
+                Clicked="btnSubmit_Clicked"
+                HorizontalOptions="Center" 
+                />
+            </VerticalStackLayout>
+
+          
+        </VerticalStackLayout>
+
+
+
+    </ScrollView>
+
+</ContentPage>

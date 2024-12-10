@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="sombrero.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:sombrero.views"
+    xmlns:a="clr-namespace:sombrero"
+
+    xmlns:controls="clr-namespace:sombrero.Controls"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarHasShadow="True"
+    Shell.BackgroundColor="Moccasin"
+    Shell.NavBarIsVisible="True"
+    FlyoutIcon="buttonflyout.png"
+    FlyoutBackgroundColor="AliceBlue"
+    >
+ 
+    <Shell.FlyoutHeader>
+        <Border BackgroundColor="White"
+                StrokeThickness="0">
+            <Grid ColumnDefinitions="Auto, *"
+                    Padding="25"
+                  ColumnSpacing="20">
+                <Image Grid.Column="0"
+                Source="sombrero.png"
+                   Aspect="AspectFill"
+                   HeightRequest="70"
+                   WidthRequest="70"
+                       
+                       />
+
+                <Label x:Name="Encabezadoflyout" Grid.Column="1"
+                       Text="fsdf"
+                   VerticalTextAlignment="Center"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                       BackgroundColor="AliceBlue"/>
+            </Grid>
+        </Border>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutContent>
+        <controls:CustomFlyoutContent/>
+    </Shell.FlyoutContent>
+
+    <Shell.FlyoutFooter>
+        <Label Text="Copyright | La sombreriza"
+               BackgroundColor="AliceBlue"
+               HorizontalTextAlignment="Center"
+               Padding="0, 10"/>
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="ParentRoute">
+        <ShellContent
+        Title="La sombreriza"
+        ContentTemplate="{DataTemplate local:IntroScreenView}"
+        Route="MainPage" />
+        
+    </FlyoutItem>
+    <ShellContent
+ Title="La sombreriza"
+ ContentTemplate="{DataTemplate local:NewPage1}"
+ Route="NewPage1"
+        />
+
+
+
+</Shell>

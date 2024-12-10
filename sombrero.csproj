@@ -1,0 +1,164 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>sombrero</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>sombrero</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.sombrero</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+		<NullabilityInfoContextSupport>true</NullabilityInfoContextSupport>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+	  <CodesignKey>Apple Development: Created via API (NU757D7H2R)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
+
+	<ItemGroup>		
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\iconosombrero.png" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\sombrero.svg" Color="#fffdfd" BaseSize="128,128" />
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\AppIcon\iconosombrero.png" />
+	  <None Remove="Resources\AppIcon\sombreroicono.svg" />
+	  <None Remove="Resources\Images\avisarbache.png" />
+	  <None Remove="Resources\Images\bache.png" />
+	  <None Remove="Resources\Images\buttonflyout.png" />
+	  <None Remove="Resources\Images\facebook_icon.png" />
+	  <None Remove="Resources\Images\google.png" />
+	  <None Remove="Resources\Images\Instagram_icon.png" />
+	  <None Remove="Resources\Images\LOGOUT.png" />
+	  <None Remove="Resources\Images\services.svg" />
+	  <None Remove="Resources\Images\sombrero.png" />
+	  <None Remove="Resources\Images\twitter_icon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.5.5" />
+		<PackageReference Include="Amazon.Extensions.Configuration.SystemsManager" Version="6.2.1" />
+		<PackageReference Include="AWSSDK.CognitoIdentity" Version="3.7.400.11" />
+		<PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.402.8" />
+		<PackageReference Include="Google.Apis" Version="1.68.0" />
+		<PackageReference Include="Google.Apis.Calendar.v3" Version="1.68.0.3473" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.80" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.80" />
+		<PackageReference Include="Microsoft.Maui.Maps" Version="8.0.80" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Scheduler" Version="26.2.11" />
+		<PackageReference Include="Xamarin.Google.iOS.SignIn" Version="5.0.2.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Controls\flyoutpageheader_control.xaml.cs">
+	    <DependentUpon>flyoutpageheader_control.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="paginas\enviarreportebache.xaml.cs">
+	    <DependentUpon>enviarreportebache.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="paginas\bachemapa.xaml.cs">
+	    <DependentUpon>bachemapa.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Botonosersonalizados\botonpersonaliozado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\CustomFlyoutContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\flyoutpageheader_control.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ImportGoogleCalendar\agenda_consultas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="paginas\enviarreportebache.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="paginas\bachemapa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="paginas\mas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="paginas\Quienessomos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="paginas\transparencia.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="views\IntroScreenView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="views\NewPage1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+	  <PackageReference Include="Xamarin.AndroidX.Collection">
+	    <Version>1.4.2</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.AndroidX.Collection.Ktx">
+	    <Version>1.4.2</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx">
+	    <Version>1.8.2</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.GooglePlayServices.Auth">
+	    <Version>121.2.0</Version>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>

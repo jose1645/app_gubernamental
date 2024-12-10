@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Botonosersonalizados="clr-namespace:sombrero.Botonosersonalizados"
+             x:Class="sombrero.paginas.enviarreportebache"
+             Title="Enviar reporte bache">
+    <VerticalStackLayout>
+       
+        
+        <Label 
+            Text="Acercate lo mas proximo al bache y presiona el boton"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+      
+
+        <Botonosersonalizados:botonpersonaliozado 
+            HorizontalOptions="Center" 
+            Text="enviar reporte" 
+            loadingtext="Espera..."
+            x:Name="btn1" 
+            Tapped="btn1_Tapped"
+            isinsprogress="False"
+            >
+        </Botonosersonalizados:botonpersonaliozado>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

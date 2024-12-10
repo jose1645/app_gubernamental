@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sombrero.paginas.Quienessomos"
+             Title="Quienessomos">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <!-- Introducción -->
+            <Label Text="Acerca de Nosotros"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Nuestra misión es..."
+                   FontSize="18"
+                   Margin="0,10,0,5"/>
+
+            <Label Text="Nuestra visión es..."
+                   FontSize="18"
+                   Margin="0,0,0,10"/>
+
+            <!-- Historia -->
+            <Label Text="Historia"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Label Text="Nuestra historia comenzó en..."
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+            <!-- Equipo -->
+            <Label Text="Nuestro Equipo"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <!-- Aquí puedes agregar una lista de miembros del equipo -->
+            <!-- Ejemplo simple con un par de etiquetas -->
+            <StackLayout Orientation="Horizontal">
+                <Image Source="sombrero.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="Nombre del Miembro 1"
+                       VerticalOptions="Center"
+                       Margin="10,0,0,0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="sombrero.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="Nombre del Miembro 2"
+                       VerticalOptions="Center"
+                       Margin="10,0,0,0"/>
+            </StackLayout>
+
+            <!-- Servicios o Productos -->
+            <Label Text="Nuestros Servicios"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Label Text="Servicio 1: Descripción..."
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+            <Label Text="Servicio 2: Descripción..."
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+            <!-- Contactar -->
+            <Label Text="Contacto"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <Label Text="Dirección: Calle Ejemplo 123, Ciudad, País"
+                   FontSize="16"
+                   Margin="0,0,0,5"/>
+
+            <Label Text="Correo electrónico: contacto@ejemplo.com"
+                   FontSize="16"
+                   Margin="0,0,0,5"/>
+
+            <Label Text="Teléfono: +123 456 7890"
+                   FontSize="16"
+                   Margin="0,0,0,20"/>
+
+            <!-- Redes Sociales -->
+            <Label Text="Síguenos en:"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,5"/>
+
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="facebook_icon.png" WidthRequest="30" HeightRequest="30" Clicked="OnFacebookClicked"/>
+                <ImageButton Source="twitter_icon.png" WidthRequest="30" HeightRequest="30" Clicked="OnTwitterClicked"/>
+                <ImageButton Source="instagram_icon.png" WidthRequest="30" HeightRequest="30" Clicked="OnInstagramClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
