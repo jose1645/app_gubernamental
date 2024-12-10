@@ -63,7 +63,7 @@ public partial class enviarreportebache : ContentPage
         }
         try
         {
-            string url = "https://s315om9r2b.execute-api.us-east-1.amazonaws.com/crearreportebache";
+            string url = "tuendpoint";
             HttpClient client = new HttpClient();
             var requestData = new { latitud = latitud, longitud = longitud, fecha = DateTime.Now.ToString("yyyy,MM,dd HH:mm:ss"), so = DeviceInfo.Platform, modelo = DeviceInfo.Model, manofactura = DeviceInfo.Manufacturer, nombre = DeviceInfo.Name, tipodispositivo = DeviceInfo.DeviceType, version = DeviceInfo.Version, existe = 1 }; // data en diccionario
             string json = JsonSerializer.Serialize(requestData);

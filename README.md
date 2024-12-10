@@ -1,4 +1,4 @@
-# ![Logo de Reporta Baches](Resources/AppIcon/sombrero.png)
+# ![Logo de Reporta Baches](Resources/AppIcon/iconosombrero.png)
 
 # Reporta Baches
 

@@ -23,11 +23,11 @@ namespace sombrero.ImportGoogleCalendar.ViewModel
             // Initialize the Google Calendar Service with the API key 
             CalendarService service = new CalendarService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyDkptYOLhtUmB72vKo5ONwPPuM7HWGYGzA",
+                ApiKey = "tukey",
                 ApplicationName = "My First Project"
             });
 
-            string calendarId = "711c583132b884162c2e5fb43eec79e8c7be6598d10d036b17ea9e8b67b36608@group.calendar.google.com";
+            string calendarId = "elidcalendar";
 
             // Define a DateTime range to retrieve events
             DateTime startDate = DateTime.Now.AddDays(-10);

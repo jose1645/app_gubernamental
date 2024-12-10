@@ -70,7 +70,7 @@ public partial class bachemapa : ContentPage
         {
             //mandar a escribir a api
             // URL del recurso
-            string url = "https://7xdnrs0gj2.execute-api.us-east-1.amazonaws.com/actualizarbache";
+            string url = "tu endpoint";
 
             // Datos a enviar
             dynamic datos = new
