@@ -55,9 +55,8 @@ ReportaBaches/
   - Google Maps API para geolocalización.
 
 - **Backend**:
-  - Node.js con Express para la API REST.
+  - Lambda AWS.
   - DynamoDB para el almacenamiento de reportes.
-  - AWS S3 para subir y almacenar imágenes.
 
 - **Infraestructura**:
   - AWS Lambda para el procesamiento de datos.
@@ -73,7 +72,6 @@ ReportaBaches/
 - GPS habilitado
 
 ### Backend
-- Node.js v16 o superior
 - AWS CLI configurado
 - DynamoDB y S3 habilitados en tu cuenta de AWS
 
@@ -88,13 +86,7 @@ cd reportabaches
    AWS_ACCESS_KEY_ID=your-access-key-id
    AWS_SECRET_ACCESS_KEY=your-secret-access-key
    AWS_REGION=us-east-1
-
-2. Instala las dependencias:
-   cd backend
-   npm install
-
-3. Inicia el servidor:
-   npm start
+   Tambien vas a requirir agregar las llaves de las Apis Solicitadas en el codigo
 
 ### 3. Configurar el Frontend
 1. Configura la API Key de Google Maps en el archivo AndroidManifest.xml:
@@ -106,17 +98,29 @@ cd reportabaches
    dotnet run
 
 ## Uso de la Aplicación
-
-1. **Reportar un Bache**:
+1. **Autenticate con google**
+2. **Reportar un Bache**:
    - Presiona el botón "Reportar".
-   - Completa los campos de descripción y adjunta una foto del bache.
    - Envía el reporte.
 
-2. **Visualizar Reportes**:
+3. **Visualizar Reportes**:
    - Abre el mapa para ver los baches reportados en tu área.
 
-3. **Actualizar el Estado**:
+4. **Actualizar el Estado**:
    - Haz clic en un marcador para actualizar el estado del reporte.
+
+
+
+5. La data se almacena en dynamo DB de la siguiente manera
+  | ID                                    | Existe | Fecha                | Latitud     | Longitud     | Fabricante | Modelo       | Nombre             | SO   | Tipo | Versión |
+|---------------------------------------|--------|----------------------|-------------|--------------|------------|--------------|--------------------|------|------|---------|
+| fc0dba28-a209-42d8-be08-d75c0ffb809d | 1      | 2024,12,10 11:56:42 | 19.4386353  | -102.009564  | Xiaomi     | M2103K19PG   | POCO M3 Pro 5G    | {}   | 1    | 13.0    |
+| 9059b1cd-314b-4fc2-8a05-5f8f6ac098f2 | 0      | 2024,09,04 18:27:49 | 19.4283909  | -102.0485393 | HUAWEI     | STK-LX3      | STK-LX3           | {}   | 1    | 10.0    |
+| 9d0032a7-3207-4bd8-b6c1-468bc46a3e24 | 0      | 2024,09,04 18:27:21 | 19.4283909  | -102.0485393 | HUAWEI     | STK-LX3      | STK-LX3           | {}   | 1    | 10.0    |
+| d5ce0f41-374a-4d42-b3d3-fe1865a0d1f9 | 1      | 2024,09,03 10:54:49 | 19.4386142  | -102.0095164 | Xiaomi     | M2103K19PG   | POCO M3 Pro 5G    | {}   | 1    | 13.0    |
+| 0863010e-fe10-4494-994a-f5065b4b0262 | 0      | 2024,09,02 12:52:28 | 19.4385878  | -102.0095416 | Xiaomi     | M2103K19PG   | POCO M3 Pro 5G    | {}   | 1    | 13.0
+
+
 
 ## Contribuciones
 
