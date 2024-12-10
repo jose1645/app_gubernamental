@@ -1,3 +1,5 @@
+# ![Logo de Reporta Baches](Resources/AppIcon/sombrero.png)
+
 # Reporta Baches
 
 Reporta Baches es una aplicación móvil diseñada para reportar baches en la comunidad de manera sencilla y eficiente. Los usuarios pueden registrar baches con información relevante como ubicación, descripción y fotos, mientras que las autoridades pueden visualizar estos reportes en un mapa interactivo.
